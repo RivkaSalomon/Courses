@@ -1,0 +1,13 @@
+   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    
+      <label for="userName" ></label>
+      <input type="text" formControlName="userName" placeholder="user name" >
+
+      <label for="password">Password:</label>
+      <input type="password" formControlName="password" >
+
+    <button type="submit">Submit</button>
+  </form>
+  
+<button (click)="lecturerLogin()">כניסת מרצה</button>
+
