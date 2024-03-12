@@ -10,8 +10,9 @@ import { HttpClientModule } from '@angular/common/http';
   selector: 'app-root',
   standalone: true,
 
-  //  imports: [CommonModule, RouterOutlet,UserModule ,CourseModule, HomeComponent],
-   imports: [CommonModule, RouterOutlet, HttpClientModule, HomeComponent],
+
+   imports: [CommonModule, RouterOutlet,UserModule ,CourseModule, HomeComponent],
+  //  imports: [CommonModule, RouterOutlet, HttpClientModule, HomeComponent],
 
   templateUrl:'./app.component.html',
   styleUrl: './app.component.scss'

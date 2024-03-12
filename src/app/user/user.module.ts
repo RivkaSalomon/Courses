@@ -13,10 +13,9 @@ import { UserService } from './user.service';
   declarations: [LoginComponent,RegisterComponent,LogoutComponent],
   imports: [
     CommonModule,
-    ReactiveFormsModule,
-   HttpClientModule
+    ReactiveFormsModule
   ],
-  providers: [ HttpClientModule]
+  // providers: [ HttpClientModule]
 
 })
 export class UserModule { }
