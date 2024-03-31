@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { User } from '../classes/user.model';
 
 @Injectable({
@@ -11,23 +11,25 @@ export class UserService {
  constructor(private http: HttpClient) { }
 
  public users : User[] = [] ;
+ name$ : BehaviorSubject<string> = new BehaviorSubject<string>('');
 
 
 
   public getUsers(): Observable<User[]>{
-     return this.http.get<User[]>('https://localhost:7257/api/User')
+     return this.http.get<User[]>('https://localhost:44384/api/User')
   }
 
   public getUserById(id: number): Observable<User>{
-    return this.http.get<User>(`https://localhost:7257/api/User/${id}`);
+    return this.http.get<User>(`https://localhost:44384/api/User/${id}`);
   }
   public save(c: User): Observable<any> {
     // this.users.push(c)
-    return this.http.post('/api/User', c)
+    console.log("post")
+    return this.http.post('https://localhost:44384/api/User', c)
   }
 
   public login(name : string , password : string) : Observable<User> {
-    const url = `https://localhost:7257/api/User/login/${name}/${password}`
+    const url = `https://localhost:44384/api/User/login/${name}/${password}`
     return this.http.get(url);
   }
 

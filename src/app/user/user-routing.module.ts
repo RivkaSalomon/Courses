@@ -7,11 +7,14 @@ import { LogoutComponent } from './logout/logout.component';
 import { UserService } from './user.service';
 
 
+
 const userRoutes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component : LoginComponent },
   { path: 'register', component: RegisterComponent},
   { path: 'logout', component: LogoutComponent},
+
+
 
 ]
 
