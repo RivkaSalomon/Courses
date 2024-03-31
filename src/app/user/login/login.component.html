@@ -1,13 +1,23 @@
-   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    
-      <label for="userName" ></label>
-      <input type="text" formControlName="userName" placeholder="user name" >
 
-      <label for="password">Password:</label>
-      <input type="password" formControlName="password" >
 
-    <button type="submit">Submit</button>
-  </form>
-  
-<button (click)="lecturerLogin()">כניסת מרצה</button>
+
+
+
+ <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="styled-form" [@formAnimation]>
+  <label for="userName">שם משתמש</label>
+  <input type="text" formControlName="userName" placeholder="שם משתמש"  autocomplete="off" class="form-input">
+
+  <label for="password">סיסמה</label>
+  <input type="password" formControlName="password" placeholder="סיסמה" class="form-input">
+
+  <button type="submit" class="submit-button">אישור</button>
+
+  <br/><br/> <br/><br/>
+  <button (click)="lecturerLogin()" class="login-button">כניסת מרצה</button>
+  <br/>
+  <input *ngIf="isLecturer"  type="text" placeholder="שם הקורס" id="courseName" > 
+</form>
+
+
+
 

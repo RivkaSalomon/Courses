@@ -5,14 +5,14 @@ import { UserModule } from './user/user.module';
 import { CourseModule } from './course/course.module';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
 
 
-   imports: [CommonModule, RouterOutlet,UserModule ,CourseModule, HomeComponent],
-  //  imports: [CommonModule, RouterOutlet, HttpClientModule, HomeComponent],
+   imports: [CommonModule , RouterOutlet,UserModule ,CourseModule, HomeComponent],
 
   templateUrl:'./app.component.html',
   styleUrl: './app.component.scss'
