@@ -24,9 +24,9 @@ ngOnInit(): void {
 
   this.registerForm = this.formBuilder.group({
     id: [,[ Validators.required ,  this.isValidIdNumber]],
-    name: [this.userService.name$.value, [Validators.required]], //צריך להיות מאותחל כבר ביוזר ניים מלוגין
-    address: ['', Validators.required],
-    mail: ['', Validators.required],
+    name: [this.userService.name$.value, [Validators.required]], 
+    address: [''],
+    mail: [''],
     password: ['', Validators.required],
   })
 }
@@ -35,13 +35,9 @@ onSubmit(){
 this.checkUserExsist(); 
   this.userService.save(this.registerForm.value).subscribe(data=> {
       if(data == true){
-        console.log("good")
          this.router.navigate(['/course/All-Course'])
-
       }
       else{
-        
-        // this.router.navigate(['/user/register' ])  
       }
     })
 }

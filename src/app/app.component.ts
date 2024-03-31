@@ -12,8 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   standalone: true,
 
 
-   imports: [CommonModule , RouterOutlet,UserModule ,CourseModule, HomeComponent,FormsModule, ReactiveFormsModule],
-  //  imports: [CommonModule, RouterOutlet, HttpClientModule, HomeComponent],
+   imports: [CommonModule , RouterOutlet,UserModule ,CourseModule, HomeComponent],
 
   templateUrl:'./app.component.html',
   styleUrl: './app.component.scss'

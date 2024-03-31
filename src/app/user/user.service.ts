@@ -23,8 +23,6 @@ export class UserService {
     return this.http.get<User>(`https://localhost:44384/api/User/${id}`);
   }
   public save(c: User): Observable<any> {
-    // this.users.push(c)
-    console.log("post")
     return this.http.post('https://localhost:44384/api/User', c)
   }
 
@@ -34,26 +32,4 @@ export class UserService {
   }
 
 
- // public CheckUserLogin(name: string, password: string) {
-   // let i
-   // for ( i= 0; i < this.users.length; i++) {
-    //  if (this.users[i].name == name) {
-      //  if (this.users[i].password == password) {
-       //   console.log(this.users[i].name+" "+this.users[i].password)
-        
-       //   this.router.navigate(['/home'])
-      //     break;
-      //  }
-      //  else {
-        
-      //    this.router.navigate(['/login'])
-         //  break;
-     //   }
-    //  }
-     
-   // }
-  
-  //  if(i==this.users.length)
-     // this.router.navigate(['/register', name ])
-//
 }

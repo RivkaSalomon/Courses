@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-
-import { UserService } from '../../user/user.service';
 import { CourseService } from '../course.service';
 import { Course, EHowToLearn } from '../../classes/course.model';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -17,9 +15,7 @@ import { CategoryService } from '../../category.service';
 })
 
 export class AdddeditComponent implements OnInit {
-  // ngOnInit(): void {
-  //   throw new Error('Method not implemented.');
-  // }
+
   course: Course=new Course();
   courseId?: number
   courseForm!: FormGroup
@@ -72,8 +68,6 @@ export class AdddeditComponent implements OnInit {
       'image': new FormControl(this.course?.img, [Validators.required])
     })
     this.updateFormValues();
-    console.log(this.course?.startDate,"edit")
-    // window.location.reload();
   }
   updateFormValues() {
     const silibusFormArray = this.courseForm.get('syllabus') as FormArray;
@@ -108,8 +102,7 @@ export class AdddeditComponent implements OnInit {
   onSubmit() {
     let flag:boolean=true;
     this.getCourse();
-    console.log(this.course?.name+"lkjbv")
-    flag=this.getChanges();
+    flag = this.getChanges();
     if(this.course)
     {
     if (flag)
@@ -151,38 +144,3 @@ export class AdddeditComponent implements OnInit {
   
 }
  
-
-
-
-
-// export class AddCourseComponent {
-//   addCourseform?: FormGroup;
-
-//   constructor(private formBuilder: FormBuilder,
-//     private router: Router,
-//     private courseService :CourseService) { 
-
-//   this.addCourseform = this.formBuilder.group({
-//     id: ['', Validators.required],
-//     name: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(6), Validators.pattern('^\\d{4,6}$')]]
-//   });}
-
-
-//   ngOnInit(): void {
-//     this.addCourseform = this.formBuilder.group({
-//       id: [null, Validators.required],
-//       name: ['', [Validators.required, Validators.minLength(3)]], 
-//       categoryId: [null, Validators.required],
-//       countLessons: [null, Validators.required],
-//       syllabus: this.formBuilder.array([new FormControl('', Validators.required)]), // Initialize with one empty syllabus input
-//       howToLearn: ['', Validators.required],
-//       startDate: [null, Validators.required],
-//       instructions: [''],
-//       lecturerId: [null, Validators.required],
-//       imgPath: ['']
-//     });
-// }
-// public save() {
-// console.log("jkhgkj")
-// }
-

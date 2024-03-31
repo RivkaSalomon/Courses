@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
-import { log } from 'console';
 
 @Component({
   selector: 'app-login',
@@ -25,9 +24,7 @@ export class LoginComponent {
   };
 
   ngOnInit(): void {
-    // Angular animations definition
-    // trigger('formAnimation', [transition(':enter', [style({ opacity: 0 }), animate('300ms', style({ opacity: 1 }))])
-    // ])
+
   }
 
 
@@ -44,11 +41,8 @@ export class LoginComponent {
 
         }
         else {
-          console.log("not good")
          this.userService.name$.next(this.loginForm.value.userName);
-
-          // this.router.navigate(['/user/register', this.loginForm.value.userName ])  
-          this.router.navigate(['/user/register'])
+         this.router.navigate(['/user/register']);
         }
       })
   }
