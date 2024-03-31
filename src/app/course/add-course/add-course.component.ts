@@ -8,6 +8,7 @@ import Swal from 'sweetalert2';
 import { CategoryService } from '../../category.service';
 
 
+
 @Component({
   selector: 'app-add-course',
   templateUrl: './add-course.component.html',
